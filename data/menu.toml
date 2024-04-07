@@ -1,0 +1,43 @@
+[[entries]]
+title = "about"
+
+  [[entries.entries]]
+  title = "Mario Merlo"
+
+  [[entries.entries]]
+  title = "BSc in Computer Engineering @ Politecnico di Milano"
+
+  [[entries.entries]]
+  title = "Currently getting a MSc in Computer Engineering @ Politecnico di Milano"
+
+  [[entries.entries]]
+  title = "Trying to start a videogame studio too"
+
+[[entries]]
+title = "all posts"
+
+  [entries.post_list]
+  limit = 5
+  show_more = true
+  show_more_text = "See archive..."
+  show_more_url = "posts"
+
+[[entries]]
+title = "links"
+
+	[[entries.entries]]
+	title = "GitHub"
+	url = "https://github.com/mrvideo"
+
+	[[entries.entries]]
+	title = "Email"
+	url = "mailto:hello@mariomerlo.me"
+
+	[[entries.entries]]
+	title = "CV"
+	url = "cv.pdf"
+
+[[entries]]
+title = "rss"
+url = "index.xml"
+
