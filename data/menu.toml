@@ -17,6 +17,7 @@ title = "about"
 title = "all posts"
 
   [entries.post_list]
+  section = "posts"
   limit = 5
   show_more = true
   show_more_text = "See archive..."
