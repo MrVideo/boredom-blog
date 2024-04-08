@@ -1,10 +1,8 @@
 ---
 draft: false
-title: 'First Post'
+title: 'Hello, world!'
 date: 2024-04-08T00:23:39+02:00
 ---
-
-# Hello, world!
 
 Hi there!
 
