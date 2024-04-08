@@ -1,2 +1,6 @@
 # File system
 .DS_Store
+
+# Hugo generated files
+/public/
+/resources/_gen/
