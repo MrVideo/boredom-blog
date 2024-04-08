@@ -1,17 +1,8 @@
 [[entries]]
-title = "about"
+title = "status"
 
   [[entries.entries]]
-  title = "Mario Merlo"
-
-  [[entries.entries]]
-  title = "BSc in Computer Engineering @ Politecnico di Milano"
-
-  [[entries.entries]]
-  title = "Currently getting a MSc in Computer Engineering @ Politecnico di Milano"
-
-  [[entries.entries]]
-  title = "Trying to start a videogame studio too"
+  title = "trying to start a videogame studio"
 
 [[entries]]
 title = "all posts"
@@ -27,16 +18,16 @@ title = "all posts"
 title = "links"
 
 	[[entries.entries]]
-	title = "GitHub"
+	title = "github"
 	url = "https://github.com/mrvideo"
 
 	[[entries.entries]]
-	title = "Email"
+	title = "email"
 	url = "mailto:hello@mariomerlo.me"
 
 	[[entries.entries]]
-	title = "CV"
-	url = "cv.pdf"
+	title = "cv"
+	url = "cv"
 
 [[entries]]
 title = "rss"
