@@ -20,6 +20,9 @@ title = "all posts"
 title = "links"
 
 	[[entries.entries]]
+	title = '<a rel="me" href="https://mastodon.social/@mrvideo">mastodon</a>'
+
+	[[entries.entries]]
 	title = "github"
 	url = "https://github.com/mrvideo"
 
