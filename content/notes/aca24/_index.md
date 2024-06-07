@@ -4,7 +4,7 @@ draft: false
 layout: 'subhome'
 ---
 
-These notes are from the *Advanced Computer Architectures* course I attended in 2024.
+These notes are from the *Advanced Computer Architectures* course I attended in 2024. I mainly wrote them while studying from the book "*Computer Architecture - A quantitative approach*" by John Hennessy and David Patterson.
 
 - [Data dependencies](aca24-data-dependencies)
 - [Pipelining](aca24-pipelining)
