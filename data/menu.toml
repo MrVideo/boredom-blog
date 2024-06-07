@@ -14,15 +14,19 @@ title = "all posts"
 	show_more_text = "See archive..."
 	show_more_url = "posts"
 
-[[entries]]  
+[[entries]]
 title = "university notes"
+url = "notes"
 
-	[entries.post_list]
-	section = "notes"
-	limit = 5
-	show_more = true
-	show_more_text = "See more..."
-	show_more_url = "notes"
+# [[entries]]  
+# title = "university notes"
+#
+# 	[entries.post_list]
+# 	section = "notes"
+# 	limit = 5
+# 	show_more = true
+# 	show_more_text = "See more..."
+# 	show_more_url = "notes"
 
 
 [[entries]]
