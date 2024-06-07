@@ -34,6 +34,6 @@ Coming soon™
 - Distributed Systems
 - Foundations of Operations Research
 - Software Engineering 2
-- Advanced Computer Architectures
+- [Advanced Computer Architectures](aca24)
 - Computer Graphics
 - [Computing Infrastructures](ci24)
