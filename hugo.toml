@@ -40,6 +40,6 @@ favicon = '/favicon.ico'
 
   [params.theme_config]
     appearance = "auto"
-    back_home_text = ".."
+    back_home_text = "cd"
     date_format = "2006-01-02"
 	show_description = true
