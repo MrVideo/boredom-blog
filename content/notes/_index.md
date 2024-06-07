@@ -2,6 +2,7 @@
 title: 'University notes'
 draft: false
 toc: true
+layout: 'subhome'
 ---
 
 This is a collection of my university notes from my Bachelor's and Master's. I hope someone can find these useful for their CS/Engineering studies.
