@@ -35,7 +35,7 @@ Coming soon™
 - [Databases 2](db223) (Partial notes)
 - [Distributed Systems](ds23)
 - [Foundations of Operations Research](for23)
-- Software Engineering 2
+- [Software Engineering 2](se223)
 - [Advanced Computer Architectures](aca24)
 - [Computer Graphics](cg24)
 - [Computing Infrastructures](ci24)
