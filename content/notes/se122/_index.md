@@ -5,7 +5,7 @@ toc: true
 layout: 'subhome'
 ---
 
-These notes are from the *Distributed Systems* course I attended in 2022. Note that since the course was held in Italian, some notes are in the same language.
+These notes are from the *Software Engineering* course I attended in 2022. Note that since the course was held in Italian, some notes are in the same language.
 
 1. [Java](java)
 2. [Concurrency in Java](concurrency-java)
