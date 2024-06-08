@@ -31,8 +31,8 @@ Coming soon™
 
 ### Year 1
 
-- Foundations of Operations Research
 - [Distributed Systems](ds23)
+- [Foundations of Operations Research](for23)
 - Software Engineering 2
 - [Advanced Computer Architectures](aca24)
 - Computer Graphics
