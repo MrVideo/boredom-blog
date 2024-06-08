@@ -8,6 +8,12 @@ mathjax: true
 
 ---
 
+## DISCLAIMER
+
+MathJax is having some issues rendering equations on this page, even though the LaTeX formulas are correct. I am investigating the issue and will fix it as soon as I find a solution. Sorry for the inconvenience.
+
+---
+
 ## Download as PDF
 
 You can download this note as a PDF by clicking [here](graphs.pdf).
@@ -54,7 +60,7 @@ For example, a road network which connects $n$ cities can be modelled by a graph
 > **Paths**
 >
 > A path from $v_1\in N$ to $v_k\in N$ is a sequence of consecutive edges:
-> $$p = \textlangle \{v_1,v_2\}, \{v_2,v_3\}, \ldots, \{v_{k-1},v_k\} \textrangle$$
+> $$p = \langle \{v_1,v_2\}, \{v_2,v_3\}, \ldots, \{v_{k-1},v_k\} \rangle$$
 > with $(v_l, v_{l+1})\in E$ for $l = 1,\ldots, k-1$.
 
 Nodes $u$ and $v$ are **connected** if there is a path connecting them, while a graph is **connected** if $u,v$ are connected for every $u,v\in N$.
@@ -96,7 +102,7 @@ There are different ways to represent a graph.
 Generally speaking, for dense, directed graphs, an **adjacency matrix** is used, where every element is defined like so:
 
 $$a_{ij} = \begin{cases}
-1, &(i,j)\in A\\
+1, &(i,j)\in A\\\
 0, &\text{otherwise}
 \end{cases}$$
 
@@ -129,11 +135,11 @@ $M=\{2,3,4,5\}$ is the set of nodes that are reachable from $s=2$.
 We can write this algorithm with a sort of pseudocode like so:
 
 $$\begin{aligned}
-&Q \leftarrow \{s\}; M \leftarrow \emptyset\\
-&\text{while } Q\ne\emptyset \text{ do}\\
-&\quad u \leftarrow \text{ node in } Q; Q \leftarrow Q \setminus \{u\}\\
-&\quad M \leftarrow M \cup \{u\}\\
-&\quad \text{for } v \in S(u) \text{ do}\\
+&Q \leftarrow \{s\}; M \leftarrow \emptyset\\\
+&\text{while } Q\ne\emptyset \text{ do}\\\
+&\quad u \leftarrow \text{ node in } Q; Q \leftarrow Q \setminus \{u\}\\\
+&\quad M \leftarrow M \cup \{u\}\\\
+&\quad \text{for } v \in S(u) \text{ do}\\\
 &\quad\quad \text{if } v\notin M \text{ and } v \notin Q \text{ then } Q \leftarrow Q \cup \{v\}
 \end{aligned}$$
 
@@ -256,15 +262,15 @@ Let's look at an implementation of Prim's algorithm with complexity $O(n^2)$. Le
 Let's also define $C_j$ like so:
 
 $$C_j = \begin{cases}
-\min\{c_{ij}:i\in S\}, & j\notin S\\
+\min\{c_{ij}:i\in S\}, & j\notin S\\\
 +\infty, &\text{otherwise}
 \end{cases}$$
 
 and $\text{closest}_j$ like so:
 
 $$\text{closest}_j = \begin{cases}
-\arg\min\{c_{ij}:i\in S\}, & j\notin S\\
-\text{"predecessor" of } j \text{ in the minimum spanning tree}, & j\in S
+\arg\min\{c_{ij}:i\in S\}, &j\notin S\\\
+\text{"predecessor" of } j \text{ in the minimum spanning tree}, &j\in S
 \end{cases}$$
 
 For example,  if node 3 is selected from the graph of the example, we have:
@@ -284,20 +290,20 @@ In the example, since $\text{closest}=[4, 4, -, 3, 4]$, a minimum cost spanning 
 Here's the full algorithm in its $O(n^2)$ version:
 
 $$\begin{aligned}
-&T\leftarrow\emptyset; \ S\leftarrow\{u\}\\
-&\text{for } j\in N\setminus S \text{ do}\\
-&\quad C_j\leftarrow c_{uj}\\
-&\quad \text{closest}_j\leftarrow u\\
-&\\
-&\text{for } k = 1, \ldots, n-1 \text{ do}\\
-&\quad\min\leftarrow+\infty\\
-&\quad\text{for } j = 1,\ldots, n \text{ do}\\
-&\quad\quad\text{if } j\notin S \text{ and } C_j<\min \text{ then}\\
-&\quad\quad\quad \min\leftarrow C_j; \ v\leftarrow j\\
-&\\
-&\quad S\leftarrow S\cup \{v\}; \ T\leftarrow T\cup\{\{\text{closest}_v,v\}\}\\
-&\quad\text{for } j=1,\ldots,n\text{ do}\\
-&\quad\quad\text{if }j\notin S \text{ and } c_{vj}<C_j \text{ then}\\
+&T\leftarrow\emptyset; \ S\leftarrow\{u\} \\\
+&\text{for } j\in N\setminus S \text{ do}\\\
+&\quad C_j\leftarrow c_{uj}\\\
+&\quad \text{closest}_j\leftarrow u\\\
+&\\\
+&\text{for } k = 1, \ldots, n-1 \text{ do}\\\
+&\quad\min\leftarrow+\infty\\\
+&\quad\text{for } j = 1,\ldots, n \text{ do}\\\
+&\quad\quad\text{if } j\notin S \text{ and } C_j<\min \text{ then}\\\
+&\quad\quad\quad \min\leftarrow C_j; \ v\leftarrow j\\\
+&\\\
+&\quad S\leftarrow S\cup \{v\}; \ T\leftarrow T\cup\{\{\text{closest}_v,v\}\}\\\
+&\quad\text{for } j=1,\ldots,n\text{ do}\\\
+&\quad\quad\text{if }j\notin S \text{ and } c_{vj}<C_j \text{ then}\\\
 &\quad\quad\quad C_j\leftarrow c_{vj}: \text{closest}_j\leftarrow v
 \end{aligned}$$
 
@@ -361,8 +367,8 @@ The data structure associated to Dijkstra's algorithm is as follows:
 
 - $S\subseteq N$: subset of nodes whose labels are **permanent** (cannot be changed anymore by the algorithm)
 - $\overline S = (N\setminus S)\subseteq N$: subset of nodes with **temporary** labels (they can still be changed by some iteration of the algorithm)
-- $L_j = \begin{cases}\text{cost of a shortest path from }s\text{ to }j,&j\in S\\\min\{L_i+c_{ij}:(i,j)\in \delta^+(S)\},&j\notin S\end{cases}$
-- $\text{pred}_j = \begin{cases}\text{predecessor of }j\text{ in the shortest path from }s \text{ to } j, &j\in S\\ u\text{ such that }L_u+c_{uj} = \min\{L_i+c_{ij}:i\in S\},&j\notin S\end{cases}$
+- $L_j = \begin{cases}\text{cost of a shortest path from }s\text{ to }j,&j\in S\\\\min\{L_i+c_{ij}:(i,j)\in \delta^+(S)\},&j\notin S\end{cases}$
+- $\text{pred}_j = \begin{cases}\text{predecessor of }j\text{ in the shortest path from }s \text{ to } j, &j\in S\\\ u\text{ such that }L_u+c_{uj} = \min\{L_i+c_{ij}:i\in S\},&j\notin S\end{cases}$
 
 The complexity of Dijkstra's algorithm depends on how the arc $(u,v)$ is selected among those of the current cut $\delta^+(S)$:
 
@@ -393,8 +399,8 @@ Floyd-Warshall's algorithm uses two $n\times n$ matrices as a data structure, re
 The elements in the $D$ matrix are initialised according to this formula:
 
 $$d_{ij} = \begin{cases}
-0, &i=j\\
-c_{ij}, &i\ne j \land (i,j)\in A\\
+0, &i=j\\\
+c_{ij}, &i\ne j \land (i,j)\in A\\\
 +\infty, &\text{otherwise}
 \end{cases}$$
 
@@ -409,14 +415,14 @@ For example, starting from this graph:
 We can retrieve the following matrices:
 
 $$D = \begin{bmatrix}
-0 & 2 & \infty & 1\\
-\infty & 0 & 3 & 3\\
-\infty & 2 & 0 & \infty\\
+0 & 2 & \infty & 1\\\
+\infty & 0 & 3 & 3\\\
+\infty & 2 & 0 & \infty\\\
 \infty & -5 & 5 & 0
 \end{bmatrix}, \ P = \begin{bmatrix}
-1 & 1 & 1 & 1\\
-2 & 2 & 2 & 2\\
-3 & 3 & 3 & 3\\
+1 & 1 & 1 & 1\\\
+2 & 2 & 2 & 2\\\
+3 & 3 & 3 & 3\\\
 4 & 4 & 4 & 4
 \end{bmatrix}$$
 
@@ -630,13 +636,13 @@ In practice, we want to identify the maximum amount of product that we can send 
 In order to solve this problem, we can define a [**linear programming**](../for23/for23-intro#special-cases-of-mathematical-programming) model based on the value of the feasible flow $\varphi$:
 
 $$\begin{align}
-&\max \varphi \text{ so that:}\\
+&\max \varphi \text{ so that:}\\\
 &\sum_{(u,j)\in\delta^+(u)} x_{uj} - \sum_{(i,u)\in \delta^-(u)}x_{iu} = \begin{cases}
-\varphi, &u=s\\
--\varphi, &u=t\\
+\varphi, &u=s\\\
+-\varphi, &u=t\\\
 0, &\text{otherwise}
-\end{cases}\\
-&0\le x_{ij} \le k_{ij}, (i,j)\in A\\
+\end{cases}\\\
+&0\le x_{ij} \le k_{ij}, (i,j)\in A\\\
 &\varphi \in \mathbb R, x_{ij} \in \mathbb R, (i,j) \in A
 \end{align}$$
 

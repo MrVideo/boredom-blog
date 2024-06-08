@@ -19,8 +19,8 @@ You can download this note as a PDF by clicking [here](ilp.pdf).
 An Integer Linear Programming problem is an optimisation problem in the form:
 
 $$\begin{matrix}
-\min & \underline c^T\underline x\\
-\text{s.t.} & A\underline x \ge \underline b\\
+\min & \underline c^T\underline x\\\
+\text{s.t.} & A\underline x \ge \underline b\\\
 & \underline x \ge \underline 0, &\underline x \in \mathbb Z^n
 \end{matrix}$$
 
@@ -122,15 +122,15 @@ This theorem has a couple of consequences that are directly visible in the form 
 The optimal solution of the linear relaxation of a problem with this form is:
 
 $$\underline x^* = \begin{bmatrix}
-B^{-1}\underline b\\
+B^{-1}\underline b\\\
 \underline 0
 \end{bmatrix}$$
 
 Where the inverted $B$ matrix has the form:
 
 $$B^{-1} = {1\over |B|}\begin{bmatrix}
-\alpha_{11} & \cdots & \alpha_{1n}\\
-\vdots & \ddots & \vdots\\
+\alpha_{11} & \cdots & \alpha_{1n}\\\
+\vdots & \ddots & \vdots\\\
 \alpha_{m1} & \cdots & \alpha_{mn}
 \end{bmatrix}$$
 
@@ -207,7 +207,7 @@ We can apply the branch and bound algorithm to solve it by first branching:
 > 
 > If $\underline{\overline{x}}$ is integer, $\underline{\overline{x}}$ is also optimal for the Integer Linear Programming problem. Otherwise, $\exists \overline x_h$ (a fractional number) and we consider two subproblems:
 > $$\begin{aligned}
-> \text{ILP}_1 &: \min \{ \underline c^T\underline x : A\underline x=\underline b, x_h \le \lfloor\overline x_h\rfloor, \underline x \ge\underline 0, \underline x \in \mathbb Z^n \}\\
+> \text{ILP}_1 &: \min \{ \underline c^T\underline x : A\underline x=\underline b, x_h \le \lfloor\overline x_h\rfloor, \underline x \ge\underline 0, \underline x \in \mathbb Z^n \}\\\
 > \text{ILP}_2 &: \min \{ \underline c^T\underline x : A\underline x=\underline b, x_h \ge \lfloor\overline x_h\rfloor + 1, \underline x \ge\underline 0, \underline x \in \mathbb Z^n \}
 > \end{aligned}$$
 
@@ -257,8 +257,8 @@ All in all, branch and bound is a general method that can be adapted to tackle a
 Consider a generic Integer Linear Programming problem:
 
 $$\begin{matrix}
-\min & \underline c^T\underline x\\
-\text{s.t.} & A\underline x \ge \underline b\\
+\min & \underline c^T\underline x\\\
+\text{s.t.} & A\underline x \ge \underline b\\\
 & \underline x \ge \underline 0, &\underline x \in \mathbb Z^n
 \end{matrix}$$
 
@@ -335,16 +335,16 @@ Now, the [integer form](#gomory-fractional-cuts) and the [fractional form](#gomo
 >
 > Let's take a look at the following Integer Linear Programming problem:
 > $$\begin{matrix}
-> \max &z = & 8x_1 &+5x_2 & &\\
-> \text{s.t.} & &x_1 &+x_2 &\le 6&\\
-> & &9x_1 &+5x_2 &\le 45 &\\
+> \max &z = & 8x_1 &+5x_2 & &\\\
+> \text{s.t.} & &x_1 &+x_2 &\le 6&\\\
+> & &9x_1 &+5x_2 &\le 45 &\\\
 > & &x_1, &x_2 &\ge 0& \text{integer}
 > \end{matrix}$$
 > The optimal tableau for this problem is:
 > $$\begin{matrix}
->  & &x_1 &x_2 &s_1 &s_2\\
-> -z &-41.25 &0 &0 &-1.25 &-0.75\\
-> x_1 &3.75 &1 &0 &-1.25 &0.25\\
+>  & &x_1 &x_2 &s_1 &s_2\\\
+> -z &-41.25 &0 &0 &-1.25 &-0.75\\\
+> x_1 &3.75 &1 &0 &-1.25 &0.25\\\
 > x_2 &2.25 &0 &1 &2.25 &-0.25
 > \end{matrix}$$
 > The fractional optimal basic solution relative to the tableau is $\underline x^*_B=(3.75,2.25)^T$.
@@ -355,25 +355,25 @@ Now, the [integer form](#gomory-fractional-cuts) and the [fractional form](#gomo
 > $$0.75s_1 + 0.25s_2\ge0.75$$
 > Now we can introduce the slack variable $s_3\ge 0$ and add this cutting plane to the tableau. The new constraint "cuts" the optimal fractional solution of the linear relaxation of the Integer Linear Programming problem:
 > $$\begin{matrix}
->  & &x_1 &x_2 &s_1 &s_2 &s_3\\
-> -z &-41.25 &0 &0 &-1.25 &-0.75 &0\\
-> x_1 &3.75 &1 &0 &-1.25 &0.25 &0\\
-> x_2 &2.25 &0 &1 &2.25 &-0.25 &0\\
+>  & &x_1 &x_2 &s_1 &s_2 &s_3\\\
+> -z &-41.25 &0 &0 &-1.25 &-0.75 &0\\\
+> x_1 &3.75 &1 &0 &-1.25 &0.25 &0\\\
+> x_2 &2.25 &0 &1 &2.25 &-0.25 &0\\\
 > s_3 &-0.75 &0 &0 &-0.75 &-0.25 &1
 > \end{matrix}$$
 > To efficiently reoptimise the tableau, we can apply a single iteration of the dual simplex algorithm, thus obtaining:
 > $$\begin{matrix}
->  & &x_1 &x_2 &s_1 &s_2 &s_3\\
-> -z &-40 &0 &0 &0 &-0.33 &-1.67\\
-> x_1 &5 &1 &0 &0 &0.67 &-1.67\\
-> x_2 &0 &0 &1 &0 &-1 &3\\
+>  & &x_1 &x_2 &s_1 &s_2 &s_3\\\
+> -z &-40 &0 &0 &0 &-0.33 &-1.67\\\
+> x_1 &5 &1 &0 &0 &0.67 &-1.67\\\
+> x_2 &0 &0 &1 &0 &-1 &3\\\
 > s_1 &1 &0 &0 &1 &0.33 &1.33
 > \end{matrix}$$
 > Since the optimal solution $\underline x^* = (5,0,1,0,0)^T$ of the linear relaxation of the new formulation is integer, $\underline x^*$ is **also optimal for the original Integer Linear Programming problem**. We don't need to generate any more Gomory cuts.
 > 
 > To express the Gomory cut $0.75s_1 + 0.25s_2\ge0.75$ in terms of the decision variables, we can perform a simple substitution:
 > $$\begin{cases}
-> s_1 = 6-x_1-x_2\\
+> s_1 = 6-x_1-x_2\\\
 > s_2 = 45-9x_2-5x_2
 > \end{cases}\implies 3x_1+2x_2\le 15$$
 > Geometrically, we obtain:

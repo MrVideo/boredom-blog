@@ -24,14 +24,14 @@ A problem is in **standard form** if it:
 To transform constraints:
 
 - If the constraint is in the form $\underline a^T\underline x \le \underline b$, I can add a **slack** variable $s\ge 0$ to let the left side of the equation reach the value of the right side, and obtain:
-  $$\begin{cases} \underline a^T\underline x + s = \underline b\\ s\ge 0 \end{cases}$$
+  $$\begin{cases} \underline a^T\underline x + s = \underline b\\\ s\ge 0 \end{cases}$$
 - If the constraint is in the form $\underline a^T\underline x \ge \underline b$, I can subtract a **surplus** variable $s\ge 0$ to let the left side of the equation reach the value of the right side, and obtain:
-  $$\begin{cases} \underline a^T\underline x - s = \underline b\\ s\ge 0 \end{cases}$$
+  $$\begin{cases} \underline a^T\underline x - s = \underline b\\\ s\ge 0 \end{cases}$$
 
 To transform variables:
 
 - If a variable $x_j$ is **unrestricted in sign**, it can be expressed as the difference of its positive and negative parts:
-  $$\begin{cases} x_j = x_j^+ - x_j^-\\ x_j^+, x_j^- \ge 0 \end{cases}$$
+  $$\begin{cases} x_j = x_j^+ - x_j^-\\\ x_j^+, x_j^- \ge 0 \end{cases}$$
   After the substitution, we can delete $x_j$ from the problem.
 
 All other transformations are very straightforward and are related to changing the signs of constraint equations and inequalities.
@@ -152,9 +152,9 @@ Then, a **basic feasible solution** is such that $\underline x_B = B^{-1}\underl
 By substitution, we can express the objective function in terms of the non-basic variables only:
 
 $$\begin{aligned}
-\underline c^T \underline x &= \big( \underline c_B^T\ |\ \underline c_N^T \big) \begin{bmatrix} \underline x_B \\ \underline x_N \end{bmatrix}\\
-&= \big( \underline c_B^T\ |\ \underline c_N^T \big) \begin{bmatrix} B^{-1}\underline b - B^{-1}N\underline x_N \\ \underline x_N \end{bmatrix}\\
-&= \underline c_B^T B^{-1} \underline b + \big( \underline c_N^T - \underline c_B^T B^{-1} N \big)\underline x_N\\
+\underline c^T \underline x &= \big( \underline c_B^T\ |\ \underline c_N^T \big) \begin{bmatrix} \underline x_B \\\ \underline x_N \end{bmatrix}\\\
+&= \big( \underline c_B^T\ |\ \underline c_N^T \big) \begin{bmatrix} B^{-1}\underline b - B^{-1}N\underline x_N \\\ \underline x_N \end{bmatrix}\\\
+&= \underline c_B^T B^{-1} \underline b + \big( \underline c_N^T - \underline c_B^T B^{-1} N \big)\underline x_N\\\
 &= z_0 + \underline{\overline{c}}_N^T\underline x_N
 \end{aligned}$$
 
@@ -168,8 +168,8 @@ We can use the parameters above to define the vector of reduced costs for a basi
 > **Vector of reduced costs with respect to a basis $B$**
 >
 > $$\begin{aligned}
-> \underline{\overline{c}}^T &= \underline c^T - \underline c_B^TB^{-1}A\\
-> &= \big[ \underline c_B^T - \underline c_B^T B^{-1}B \ | \ \underline c_N^T - \underline c_B^T B^{-1}N \big]\\
+> \underline{\overline{c}}^T &= \underline c^T - \underline c_B^TB^{-1}A\\\
+> &= \big[ \underline c_B^T - \underline c_B^T B^{-1}B \ | \ \underline c_N^T - \underline c_B^T B^{-1}N \big]\\\
 > &= \big[ \underline 0^T \ | \ \underline{\overline{c}}_N^T \big]
 > \end{aligned}$$
 
@@ -183,27 +183,27 @@ If we consider the same Linear Programming problem as before, we can now say tha
 >
 > Let's take a look at the following example:
 > $$\begin{matrix}
-> &\min &z= &-x_1 &-x_2 &\\
-> &\text{s.t.} & &x_1 &-x_2 &+s_1 &= 1\\
-> & &x_1 &+x_2 & &+s_2 &=3\\
+> &\min &z= &-x_1 &-x_2 &\\\
+> &\text{s.t.} & &x_1 &-x_2 &+s_1 &= 1\\\
+> & &x_1 &+x_2 & &+s_2 &=3\\\
 > & &x_1, &x_2, &s_1, &s_2 &\ge 0
 > \end{matrix}$$
 > If we consider a BFS with $\underline x_B = \big( x_1 \ | \ s_2 \big)^T$, then we must put the other non-basic variables to zero, which means that $\underline x_N = \big( x_2 \ | \ s_1 \big)^T = \underline 0^T$. We obtain the following model:
 > $$\begin{matrix}
-> &\min &z= &-x_1 &-0 &\\
-> &\text{s.t.} & &x_1 &-0 &+0 &= 1\\
-> & &x_1 &+0 & &+s_2 &=3\\
+> &\min &z= &-x_1 &-0 &\\\
+> &\text{s.t.} & &x_1 &-0 &+0 &= 1\\\
+> & &x_1 &+0 & &+s_2 &=3\\\
 > & &x_1, &x_2, &s_1, &s_2 &\ge 0
 > \end{matrix}$$
 > From the above equations we can now extract the values of $x_1$, $s_2$ and $z$:
 > $$\begin{matrix}
-> &\min &z= &-x_1 & & &=-1\\
-> &\text{s.t.} & &x_1 & & &= 1\\
-> & & & & &s_2 &=2\\
+> &\min &z= &-x_1 & & &=-1\\\
+> &\text{s.t.} & &x_1 & & &= 1\\\
+> & & & & &s_2 &=2\\\
 > & &x_1, &x_2, &s_1, &s_2 &\ge 0
 > \end{matrix}$$
 > We can also write the $B$ and $N$ matrices:
-> $$B = \begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix}, N = \begin{bmatrix} -1 & 1 \\ 1 & 0 \end{bmatrix}$$
+> $$B = \begin{bmatrix} 1 & 0 \\\ 1 & 1 \end{bmatrix}, N = \begin{bmatrix} -1 & 1 \\\ 1 & 0 \end{bmatrix}$$
 > Returning to the beginning for a minute, we note that the cost vector $\underline c$ is:
 > $$\underline c = \big[ -1\ -1\ 0\ 0 \big]^T$$
 > So now we can extract $\underline c_B^T$ and $\underline c_N^T$:
@@ -224,7 +224,7 @@ When moving from a vertex to another, we are simply substituting a column from $
 In order to understand *where* to move, we can express the basic variables in terms of the non-basic ones and "choose" a direction to move in. Taking the same example as before, we can write:
 
 $$\begin{aligned}
-s_1 &= 6 - x_1 - x_2\\
+s_1 &= 6 - x_1 - x_2\\\
 s_2 &= 8 - 2x_1 - x_2
 \end{aligned}$$
 
@@ -233,24 +233,24 @@ If we decide to move on $x_1$, then we set $x_2 = 0$ and increase $x_1$. But how
 Taking the previous equations, we can say that, since $x_1, x_2, s_1, s_2 \ge 0$:
 
 $$\begin{aligned}
-s_1 &= 6 - x_1 \ge 0\\
+s_1 &= 6 - x_1 \ge 0\\\
 s_2 &= 8 - 2x_1 \ge 0
 \end{aligned}$$
 
 Solving these inequalities gives us two upper bounds:
 
 $$\begin{aligned}
-x_1 &\le 6\\
+x_1 &\le 6\\\
 x_1 &\le 4
 \end{aligned}$$
 
 We can now check which solutions are feasible by substituting their value in the equations above:
 
 - For $x_1 = 6$:
-  $$\begin{aligned} s_1 &= 6 - 6 = 0\\ s_2 &= 8 - 12 = -4 \end{aligned}$$
+  $$\begin{aligned} s_1 &= 6 - 6 = 0\\\ s_2 &= 8 - 12 = -4 \end{aligned}$$
   Since $s_2 < 0$, the solution is infeasible.
 - For $x_1 = 4$:
-  $$\begin{aligned} s_1 &= 6 - 4 = 2\\ s_2 &= 8 - 8 = 0 \end{aligned}$$
+  $$\begin{aligned} s_1 &= 6 - 4 = 2\\\ s_2 &= 8 - 8 = 0 \end{aligned}$$
   Since both $s_1$ and $s_2$ are non-negative, the solution is feasible.
 
 We can also see the result above through the graph (where vertex 5 is the feasible solution, while vertex 4 is the infeasible one):
@@ -280,34 +280,34 @@ Since the basis $B$ changes when moving from a canonical form to the next, one m
 Let's look at an example starting from the following matrices:
 
 $$A = \begin{bmatrix}
-1 & 1 & 1 & 0\\
+1 & 1 & 1 & 0\\\
 2 & 1 & 0 & 1
 \end{bmatrix}, \underline b = \begin{bmatrix}
-6\\
+6\\\
 8
 \end{bmatrix}$$
 
 We will now write the two matrices next to each other, highlighting the chosen row and column for our example:
 
 $$\begin{matrix}
-& \textcolor{blue}{s} & & & &\\
-& 1 & 1 & 1 & 0 & 6\\
+& \textcolor{blue}{s} & & & &\\\
+& 1 & 1 & 1 & 0 & 6\\\
 \textcolor{blue}{r} & \textcolor{red}{2} & 1 & 0 & 1 & 8
 \end{matrix}$$
 
 Now, let's apply the algorithm as written above: we chose our 2 for a pivot, so now we divide the row containing 2, which is $r$, by 2:
 
 $$\begin{matrix}
-& \textcolor{blue}{s} & & & &\\
-& \textcolor{green}{1} & 1 & 1 & 0 & 6\\
+& \textcolor{blue}{s} & & & &\\\
+& \textcolor{green}{1} & 1 & 1 & 0 & 6\\\
 \textcolor{blue}{r} & \textcolor{red}{1} & {1\over2} & 0 & {1\over2} & 4
 \end{matrix}$$
 
 Finally, we subtract each row in the matrix that is not $r$ with the resulting $r$ row, multiplied by the coefficient in the same column as 2. In this case, we only have another row, in which $\overline a_{is} = 1$:
 
 $$\begin{matrix}
-& \textcolor{blue}{s} & & & &\\
-\textcolor{green}{i}& 0 & {1\over2} & 1 & -{1\over2} & 2\\
+& \textcolor{blue}{s} & & & &\\\
+\textcolor{green}{i}& 0 & {1\over2} & 1 & -{1\over2} & 2\\\
 \textcolor{blue}{r} & \textcolor{red}{1} & {1\over2} & 0 & {1\over2} & 4
 \end{matrix}$$
 
@@ -337,45 +337,45 @@ Linear Programming problems in standard form can easily be visualised in the so 
 Let's take the following problem as an example:
 
 $$\begin{matrix}
-\min & -x_1 & -x_2 & & &\\
-\text{s.t.} & 6x_1 &+4x_2 &+x_3 & &=24\\
-&3x_1 &-2x_2 & &+x_4 &=6\\
+\min & -x_1 & -x_2 & & &\\\
+\text{s.t.} & 6x_1 &+4x_2 &+x_3 & &=24\\\
+&3x_1 &-2x_2 & &+x_4 &=6\\\
 &x_1, &x_2, &x_3, &x_4 &\ge 0
 \end{matrix}$$
 
 The Tableau representation of the above problem is:
 
 $$\begin{matrix}
-&&x_1 &x_2 &x_3 &x_4\\
--z &0 &-1 &-1 &0 &0\\
-x_3 &24 &6 &4 &1 &0\\
+&&x_1 &x_2 &x_3 &x_4\\\
+-z &0 &-1 &-1 &0 &0\\\
+x_3 &24 &6 &4 &1 &0\\\
 x_4 &6 &3 &-2 &0 &1
 \end{matrix}$$
 
 Applying Bland's rule, we find that the variable entering the basis is $x_1$, while the one exiting the basis is $x_4$. We find that the pivot is 3, as shown:
 
 $$\begin{matrix}
-&&\textcolor{blue}{x_1} &x_2 &x_3 &x_4\\
--z &0 &-1 &-1 &0 &0\\
-x_3 &24 &6 &4 &1 &0\\
+&&\textcolor{blue}{x_1} &x_2 &x_3 &x_4\\\
+-z &0 &-1 &-1 &0 &0\\\
+x_3 &24 &6 &4 &1 &0\\\
 \textcolor{blue}{x_4} &6 &\textcolor{red}{3} &-2 &0 &1
 \end{matrix}$$
 
 Now, we can divide the $x_4$ row by the pivot and subtract it from the $x_3$ and $-z$ rows:
 
 $$\begin{matrix}
-&&x_1 &x_2 &x_3 &x_4\\
--z &2 &0 &-{5\over 3} &0 &{1\over 3}\\
-x_3 &12 &0 &8 &1 &-2\\
+&&x_1 &x_2 &x_3 &x_4\\\
+-z &2 &0 &-{5\over 3} &0 &{1\over 3}\\\
+x_3 &12 &0 &8 &1 &-2\\\
 \textcolor{red}{x_1} &2 &1 &-{2\over 3} &0 &{1\over 3}
 \end{matrix}$$
 
 We can continue by applying iteratively the above operations, until we only have non-negative reduced costs:
 
 $$\begin{matrix}
-&&x_1 &x_2 &x_3 &x_4\\
--z &6 &\textcolor{red}{1\over2} &\textcolor{red}{0} &\textcolor{red}{1\over4} &\textcolor{red}{0}\\
-x_2 &6 &{3\over2} &1 &{1\over 4} &0\\
+&&x_1 &x_2 &x_3 &x_4\\\
+-z &6 &\textcolor{red}{1\over2} &\textcolor{red}{0} &\textcolor{red}{1\over4} &\textcolor{red}{0}\\\
+x_2 &6 &{3\over2} &1 &{1\over 4} &0\\\
 x_4 &18 &6 &0 &{1\over2} &1
 \end{matrix}$$
 
@@ -402,18 +402,18 @@ In some pathological cases, the number of iterations may grow exponentially with
 Let's take the following problem as an example:
 
 $$\begin{matrix}
-\min &x_1 & &+x_3 &\\
-\text{s.t.} &x_1 &+2x_2 & &\le 5\\
-& &x_2 &+2x_3 &=6\\
+\min &x_1 & &+x_3 &\\\
+\text{s.t.} &x_1 &+2x_2 & &\le 5\\\
+& &x_2 &+2x_3 &=6\\\
 &x_1, &x_2, &x_3 &\ge 0
 \end{matrix}$$
 
 Let's transform it into standard form:
 
 $$\begin{matrix}
-\min &x_1 & &+x_3 & &\\
-\text{s.t.} &x_1 &+2x_2 & &+x_4 &= 5\\
-& &x_2 &+2x_3 & &=6\\
+\min &x_1 & &+x_3 & &\\\
+\text{s.t.} &x_1 &+2x_2 & &+x_4 &= 5\\\
+& &x_2 &+2x_3 & &=6\\\
 &x_1, &x_2, &x_3, &x_4 &\ge 0
 \end{matrix}$$
 
@@ -422,8 +422,8 @@ We notice that the problem is not in canonical form: that is, the $A$ matrix doe
 In order to be able to solve this problem, we can use an **auxiliary, artificial problem** which has this form:
 
 $$\begin{matrix}
-\min &v = \sum_{i=1}^m y_i\\
-\text{s.t.} &A\underline x  +I\underline y = \underline b\\
+\min &v = \sum_{i=1}^m y_i\\\
+\text{s.t.} &A\underline x  +I\underline y = \underline b\\\
 &\underline x, \underline y \ge 0
 \end{matrix}$$
 
@@ -432,7 +432,7 @@ Basically, we are adding some **artificial variables** that can help us find an 
 One obvious initial basic solution for $P_A$ is:
 
 $$\begin{cases}
-\underline y = \underline b \ge 0\\
+\underline y = \underline b \ge 0\\\
 \underline x = \underline 0
 \end{cases}$$
 
@@ -449,43 +449,43 @@ Depending on whether or not the auxiliary variables $y_i$ are basic, $P_A$ is so
 Let's look at an example: our main problem $P$ is:
 
 $$\begin{matrix}
-\min &x_1 &+x_2 &+10x_3\\
-\text{s.t.} & &x_2 &+4x_3 &=2\\
-&-2x_1 &+x_2 &-6x_3 &=2\\
+\min &x_1 &+x_2 &+10x_3\\\
+\text{s.t.} & &x_2 &+4x_3 &=2\\\
+&-2x_1 &+x_2 &-6x_3 &=2\\\
 &x_1, &x_2, &x_3 &\ge 0
 \end{matrix}$$
 
 We define our auxiliary problem $P_A$ as:
 
 $$\begin{matrix}
-\min &v & & &=y_1 &+y_2 &\\
-\text{s.t.} & &x_2 &+4x_3 &+y_1 & &=2\\
-&-2x_1 &+x_2 &-6x_3 & &+y_2 &=2\\
+\min &v & & &=y_1 &+y_2 &\\\
+\text{s.t.} & &x_2 &+4x_3 &+y_1 & &=2\\\
+&-2x_1 &+x_2 &-6x_3 & &+y_2 &=2\\\
 &x_1, &x_2, &x_3, &y_1, &y_2 &\ge 0
 \end{matrix}$$
 
 We can write $v=y_1+y_2$ in canonical form by expressing $y_1$ and $y_2$ in terms of $x_1, x_2$ and $x_3$. Now we obtain the Tableau form like so:
 
 $$\begin{matrix}
-& &x_1 &x_2 &x_3 &y_1 &y_2\\
--v &-4 &2 &-2 &2 &0 &0\\
-y_1 &2 &0 &1 &4 &1 &0\\
+& &x_1 &x_2 &x_3 &y_1 &y_2\\\
+-v &-4 &2 &-2 &2 &0 &0\\\
+y_1 &2 &0 &1 &4 &1 &0\\\
 y_2 &2 &-2 &1 &-6 &0 &1
 \end{matrix}$$
 
 From here on, we can apply the Simplex method as we've seen earlier, and we reach the end of the first phase of the two-phase Simplex method by obtaining the optimal solution for $P_A$:
 
 $$\begin{cases}
-\underline x^* = (0,2,0)^T\\
+\underline x^* = (0,2,0)^T\\\
 \underline y^* = (0,0)^T
 \end{cases}$$
 
 Now, we need to express the auxiliary problem in a basis consisting of the $x_i$ variables only, to return to the original problem. We obtain:
 
 $$\begin{matrix}
-& &x_1 &x_2 &x_3 &y_1 &y_2\\
--v &0 &0 &0 &0 &1 &1\\
-x_2 &2 &0 &1 &4 &1 &0\\
+& &x_1 &x_2 &x_3 &y_1 &y_2\\\
+-v &0 &0 &0 &0 &1 &1\\\
+x_2 &2 &0 &1 &4 &1 &0\\\
 x_1 &0 &1 &0 &5 &{1\over2} &-{1\over2}
 \end{matrix}$$
 
@@ -498,7 +498,7 @@ $$z = x_1 + x_2 + 10x_3$$
 Looking at the Tableau representation, we obtain the following equations:
 
 $$\begin{cases}
-2 = x_2+4x_3\\
+2 = x_2+4x_3\\\
 0 = x_1 + 5x_3
 \end{cases}$$
 
@@ -509,9 +509,9 @@ $$z = 2 + x_3$$
 We can now write the Tableau representation for $P$ and enter phase two of the two-phase Simplex method, which consists in optimising the original problem:
 
 $$\begin{matrix}
-& &x_1 &x_2 &x_3\\
--z &2 &0 &0 &1\\
-x_2 &2 &0 &1 &4\\
+& &x_1 &x_2 &x_3\\\
+-z &2 &0 &0 &1\\\
+x_2 &2 &0 &1 &4\\\
 x_1 &0 &1 &0 &5
 \end{matrix}$$
 
@@ -536,10 +536,10 @@ The fact that we can formulate a dual problem to the one we currently have is us
 Let's take a look at this example:
 
 $$\begin{matrix}
-\max &z &=4x_1 &+x_2 &+5x_3 &+3x_4 & & \\
-\text{s.t.} & &x_1 &-x_2 &-x_3 &+3x_4 &\le 1 &(1)\\
-& &5x_1 &+x_2 &+3x_3 &+8x_4 &\le 55 &(2)\\
-& &-x_1 &+2x_2 &+3x_3 &-5x_4 &\le 3 &(3)\\
+\max &z &=4x_1 &+x_2 &+5x_3 &+3x_4 & & \\\
+\text{s.t.} & &x_1 &-x_2 &-x_3 &+3x_4 &\le 1 &(1)\\\
+& &5x_1 &+x_2 &+3x_3 &+8x_4 &\le 55 &(2)\\\
+& &-x_1 &+2x_2 &+3x_3 &-5x_4 &\le 3 &(3)\\\
 & &x_1, &x_2, &x_3, &x_4 &\ge 0
 \end{matrix}$$
 
@@ -552,15 +552,15 @@ The feasible solutions of this problem provide us with lower bounds for $z^*$:
 Unfortunately, we can't be sure about which one is the best lower bound. However, by multiplying constraint 2 by $5/3$, we obtain an inequality that dominates the objective function:
 
 $$\begin{aligned}
-{25\over3}x_1 + {5\over3}x_2 + 5x_3 +{40\over3}x_4 &\le {275\over3}\\
-4x_1 + x_2 + 5x_3 + 3x_4 &\le {25\over3}x_1 + {5\over3}x_2 + 5x_3 + {40\over3}x_4\\
+{25\over3}x_1 + {5\over3}x_2 + 5x_3 +{40\over3}x_4 &\le {275\over3}\\\
+4x_1 + x_2 + 5x_3 + 3x_4 &\le {25\over3}x_1 + {5\over3}x_2 + 5x_3 + {40\over3}x_4\\\
 z^* &\le {275\over 3}
 \end{aligned}$$
 
 Furthermore, by adding constraints 2 and 3, we obtain:
 
 $$\begin{aligned}
-4x_1 +x_2 +5x_3 +3x_4 &\le 4x_1 + 3x_2 + 6x_3 + 3x_4 \le 58\\
+4x_1 +x_2 +5x_3 +3x_4 &\le 4x_1 + 3x_2 + 6x_3 + 3x_4 \le 58\\\
 z^* &\le 58
 \end{aligned}$$
 
@@ -574,17 +574,17 @@ We have found a general strategy to calculate an upper bound on the optimal solu
 In general, any linear combination of the constraints 1, 2 and 3 reads:
 
 $$\begin{aligned}
-y_1(x_1-x_2-x_3+3x_4)&+\\
-y_2(5x_1+x_2+3x_3+8x_4)&+\\
+y_1(x_1-x_2-x_3+3x_4)&+\\\
+y_2(5x_1+x_2+3x_3+8x_4)&+\\\
 y_3(-x_1+2x_2+3x_3-5x_4)&\le y_1 +55y_2 +3y_3
 \end{aligned}$$
 
 Which is equivalent to:
 
 $$\begin{aligned}
-(y_1+5y_2-y_3)x_1 &+\\
-(-y_1+y_2+2y_3)x_2 &+\\
-(-y_1+3y_2+3y_3)x_3 &+\\
+(y_1+5y_2-y_3)x_1 &+\\\
+(-y_1+y_2+2y_3)x_2 &+\\\
+(-y_1+3y_2+3y_3)x_3 &+\\\
 (3y_1+8y_2-5y_3)x_4 &\le y_1+55y_2+3y_3
 \end{aligned}$$
 
@@ -592,10 +592,10 @@ In order to use the left side of the inequality as an upper bound on our objecti
 
 $$\begin{cases}
 \begin{matrix}
-y_1 &+5y_2 &-y_3 &\ge 4\\
--y_1 &+y_2 &+2y_3 &\ge 1\\
--y_1 &+3y_2 &+3y_3 &\ge 5\\
-3y_1 &+8y_2 &-5y_3 &\ge 3\\
+y_1 &+5y_2 &-y_3 &\ge 4\\\
+-y_1 &+y_2 &+2y_3 &\ge 1\\\
+-y_1 &+3y_2 &+3y_3 &\ge 5\\\
+3y_1 &+8y_2 &-5y_3 &\ge 3\\\
 y_1, &y_2, &y_3 &\ge 0
 \end{matrix}
 \end{cases}$$
@@ -611,21 +611,21 @@ $$z^* \le y_1+55y_2+3y_3$$
 So we have formulated the so called **dual problem**. Our primal problem was:
 
 $$\begin{matrix}
-\max &z &=4x_1 &+x_2 &+5x_3 &+3x_4 & & \\
-\text{s.t.} & &x_1 &-x_2 &-x_3 &+3x_4 &\le 1 &(1)\\
-& &5x_1 &+x_2 &+3x_3 &+8x_4 &\le 55 &(2)\\
-& &-x_1 &+2x_2 &+3x_3 &-5x_4 &\le 3 &(3)\\
+\max &z &=4x_1 &+x_2 &+5x_3 &+3x_4 & & \\\
+\text{s.t.} & &x_1 &-x_2 &-x_3 &+3x_4 &\le 1 &(1)\\\
+& &5x_1 &+x_2 &+3x_3 &+8x_4 &\le 55 &(2)\\\
+& &-x_1 &+2x_2 &+3x_3 &-5x_4 &\le 3 &(3)\\\
 & &x_1, &x_2, &x_3, &x_4 &\ge 0
 \end{matrix}$$
 
 And now we try to find an upper bound to its solution by solving our dual problem:
 
 $$\begin{matrix}
-\min &y_1 &+55y_2 &+3y_3 &\\
-\text{s.t.} &y_1 &+5y_2 &-y_3 &\ge 4\\
-&-y_1 &+y_2 &+2y_3 &\ge 1\\
-&-y_1 &+3y_2 &+3y_3 &\ge 5\\
-&3y_1 &+8y_2 &-5y_3 &\ge 3\\
+\min &y_1 &+55y_2 &+3y_3 &\\\
+\text{s.t.} &y_1 &+5y_2 &-y_3 &\ge 4\\\
+&-y_1 &+y_2 &+2y_3 &\ge 1\\\
+&-y_1 &+3y_2 &+3y_3 &\ge 5\\\
+&3y_1 &+8y_2 &-5y_3 &\ge 3\\\
 &y_1, &y_2, &y_3 &\ge 0
 \end{matrix}$$
 
@@ -636,15 +636,15 @@ $$\begin{matrix}
 > $$\begin{matrix}
 > &(P)
 > &\begin{matrix}
-> \max &z=\underline c^T\underline x\\
-> \text{s.t.} &A\underline x \le \underline b\\
+> \max &z=\underline c^T\underline x\\\
+> \text{s.t.} &A\underline x \le \underline b\\\
 > &\underline x \ge \underline 0
 > \end{matrix}
 > &
 > &(D)
 > &\begin{matrix}
-> \min &w=\underline b^T\underline y\\
-> \text{s.t.} &A^T\underline y \ge \underline c\\
+> \min &w=\underline b^T\underline y\\\
+> \text{s.t.} &A^T\underline y \ge \underline c\\\
 > &\underline y \ge \underline 0
 > \end{matrix}
 > \end{matrix}$$
@@ -652,15 +652,15 @@ $$\begin{matrix}
 > $$\begin{matrix}
 > &(P)
 > &\begin{matrix}
-> \min &z=\underline c^T\underline x\\
-> \text{s.t.} &A\underline x=\underline b\\
+> \min &z=\underline c^T\underline x\\\
+> \text{s.t.} &A\underline x=\underline b\\\
 > &\underline x\ge0
 > \end{matrix}
 > &
 > &(D)
 > &\begin{matrix}
-> \max &w=\underline b^T\underline y\\
-> \text{s.t.} &A^T\underline y\le \underline c\\
+> \max &w=\underline b^T\underline y\\\
+> \text{s.t.} &A^T\underline y\le \underline c\\\
 > &\underline y\in\mathbb R
 > \end{matrix}
 > \end{matrix}$$
@@ -673,15 +673,15 @@ We can now enunciate the **weak duality theorem**:
 > $$\begin{matrix}
 > &(P)
 > &\begin{matrix}
-> \min &z=\underline c^T\underline x\\
-> \text{s.t.} &A\underline x \ge \underline b\\
+> \min &z=\underline c^T\underline x\\\
+> \text{s.t.} &A\underline x \ge \underline b\\\
 > &\underline x \ge \underline 0
 > \end{matrix}
 > &
 > &(D)
 > &\begin{matrix}
-> \max &w=\underline b^T\underline y\\
-> \text{s.t.} &A^T\underline y \le \underline c\\
+> \max &w=\underline b^T\underline y\\\
+> \text{s.t.} &A^T\underline y \le \underline c\\\
 > &\underline y \ge \underline 0
 > \end{matrix}
 > \end{matrix}$$
@@ -713,15 +713,15 @@ Given the pair of problems:
 $$\begin{matrix}
 &(P)
 &\begin{matrix}
-\min &z=\underline c^T\underline x\\
-\text{s.t.} &A\underline x \ge \underline b\\
+\min &z=\underline c^T\underline x\\\
+\text{s.t.} &A\underline x \ge \underline b\\\
 &\underline x \ge \underline 0
 \end{matrix}
 &
 &(D)
 &\begin{matrix}
-\max &w=\underline b^T\underline y\\
-\text{s.t.} &\underline y^TA \le \underline c^T\\
+\max &w=\underline b^T\underline y\\\
+\text{s.t.} &\underline y^TA \le \underline c^T\\\
 &\underline y \ge \underline 0
 \end{matrix}
 \end{matrix}$$
@@ -733,14 +733,14 @@ If $x_j$ and $y_i$ are unknown, this is a single equation in $n+m$ unknowns.
 However, since $\underline{y^*}^T\underline b\le \underline{y^*}^TA\underline x^* \le \underline c^T\underline x^*$, we have:
 
 $$\begin{aligned}
-\underline{y^*}^T\underline b &= \underline{y^*}^TA\underline x^*\\
+\underline{y^*}^T\underline b &= \underline{y^*}^TA\underline x^*\\\
 \underline{y^*}^TA\underline x^* &= \underline c^T\underline x^*
 \end{aligned}$$
 
 Therefore:
 
 $$\begin{aligned}
-\underline{y^*}^T(A\underline x^* - \underline b) &= \underline 0\\
+\underline{y^*}^T(A\underline x^* - \underline b) &= \underline 0\\\
 (\underline c^T - \underline{y^*}^TA)\underline x^* &= \underline 0
 \end{aligned}$$
 
@@ -750,7 +750,7 @@ These are $n+m$ equations in $n+m$ unknowns, and so **necessary and sufficient o
 >
 > $\underline x^*\in X$ and $\underline y^*\in Y$ are optimal solutions of, respectively, $(P)$ and $(D)$, if and only if:
 > $$\begin{aligned}
-> y_i^*\overbrace{(\underline{a}_i^T\underline x^* - b_i)}^{s_i} &= 0, &i = 1, \ldots, m\\
+> y_i^*\overbrace{(\underline{a}_i^T\underline x^* - b_i)}^{s_i} &= 0, &i = 1, \ldots, m\\\
 > \underbrace{(c_j^T-\underline{y^*}^TA_j)}_{s'_j}x_j^* &= 0, &j = 1, \ldots, n
 > \end{aligned}$$
 > Where:
@@ -767,8 +767,8 @@ Sensitivity analysis is the process used to evaluate the sensitivity of an optim
 Let's start with an example about production planning:
 
 $$\begin{matrix}
-\max &\sum_{j=1}^n p_jx_j & \\
-\text{s.t.} &\sum_{j=1}^n a_{ij}x_j\le b_i &i = 1, \ldots, m\\
+\max &\sum_{j=1}^n p_jx_j & \\\
+\text{s.t.} &\sum_{j=1}^n a_{ij}x_j\le b_i &i = 1, \ldots, m\\\
 &x_j\ge 0 &j = 1, \ldots, n
 \end{matrix}$$
 
@@ -782,9 +782,9 @@ In the above problem:
 Let's try to understand the geometric interpretation of sensitivity analysis taking the following problem into account:
 
 $$\begin{matrix}
-\max &x_1 &+x_2 &\\
-\text{s.t.} &{x_1\over2} &+x_2 &\le 2\\
-&2x_1 &+x_2 &\le 4\\
+\max &x_1 &+x_2 &\\\
+\text{s.t.} &{x_1\over2} &+x_2 &\le 2\\\
+&2x_1 &+x_2 &\le 4\\\
 &x_1, &x_2, &\ge 0
 \end{matrix}$$
 
@@ -797,9 +797,9 @@ We find that the optimal basic feasible solution is $\underline x^* = \big({4\ov
 Now, if we multiply the variable $x_1$ by a coefficient $c_1$, we can see how the graph shifts with regards to the value of $c_1$:
 
 $$\begin{matrix}
-\max &\textcolor{red}{c_1}x_1 &+x_2 &\\
-\text{s.t.} &{x_1\over2} &+x_2 &\le 2\\
-&2x_1 &+x_2 &\le 4\\
+\max &\textcolor{red}{c_1}x_1 &+x_2 &\\\
+\text{s.t.} &{x_1\over2} &+x_2 &\le 2\\\
+&2x_1 &+x_2 &\le 4\\\
 &x_1, &x_2, &\ge 0
 \end{matrix}$$
 
@@ -810,9 +810,9 @@ When ${1\over2}\le c_1\le 2$, the graph looks like this:
 We can also try modifying the right side of the inequalities:
 
 $$\begin{matrix}
-\max &x_1 &+x_2 &&\\
-\text{s.t.} &{x_1\over2} &+x_2 &\le 2 &\textcolor{red}{+1}\\
-&2x_1 &+x_2 &\le 4&\\
+\max &x_1 &+x_2 &&\\\
+\text{s.t.} &{x_1\over2} &+x_2 &\le 2 &\textcolor{red}{+1}\\\
+&2x_1 &+x_2 &\le 4&\\\
 &x_1, &x_2, &\ge 0&
 \end{matrix}$$
 
@@ -833,15 +833,15 @@ Sensitivity analysis can be performed algebraically as well.
 Given the Linear Programming problem:
 
 $$\begin{matrix}
-\min &\underline c^T\underline x\\
-\text{s.t.} &A\underline x = \underline b\\
+\min &\underline c^T\underline x\\\
+\text{s.t.} &A\underline x = \underline b\\\
 &\underline x > \underline 0
 \end{matrix}$$
 
 and an optimal basic feasible solution $\underline x^*$ composed of:
 
 $$\begin{aligned}
-\underline x_B^* &= B^{-1}\underline b \ge \underline 0\\
+\underline x_B^* &= B^{-1}\underline b \ge \underline 0\\\
 \underline x_N^* &= \underline 0
 \end{aligned}$$
 
@@ -863,7 +863,7 @@ where $\underline e_k$ is the vector which has a single one in the $k$-th positi
 In this case, the basis $B$ with the basic feasible solution:
 
 $$\underline x^* = \begin{bmatrix}
-B^{-1}(\underline b+\delta_k\underline e_k)\\
+B^{-1}(\underline b+\delta_k\underline e_k)\\\
 \underline 0
 \end{bmatrix}$$
 
@@ -894,7 +894,7 @@ $${\underline{\overline{c}}'}_N^T = \underline{c'}_N^T - \underline{c'}_B^TB^{-1
 In that case, the optimal basic feasible solution does not change:
 
 $$\begin{aligned}
-\underline x_B^* &= B^{-1}\underline b\\
+\underline x_B^* &= B^{-1}\underline b\\\
 \underline x_N^* &= \underline 0
 \end{aligned}$$
 

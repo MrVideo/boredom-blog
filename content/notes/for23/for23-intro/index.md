@@ -87,13 +87,6 @@ The main steps to resolve an Operations Research problem are:
 4. Implement or use an efficient computer program to find a solution
 5. Analyse the results
 
-```mermaid
-stateDiagram-v2
-direction LR
-	Problem --> Model
-	Model --> Algorithm
-	Algorithm --> Implementation
-```
 
 ## Solving decision-making problems
 
