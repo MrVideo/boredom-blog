@@ -26,6 +26,7 @@ Coming soon™
 ### Year 3
 
 - [Databases 1](db122) (Completely in Italian)
+- [Software Engineering 1](se122) (Partially in Italian)
 
 ## Masters' degree
 
