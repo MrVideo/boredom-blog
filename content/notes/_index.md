@@ -37,5 +37,5 @@ Coming soon™
 - [Foundations of Operations Research](for23)
 - Software Engineering 2
 - [Advanced Computer Architectures](aca24)
-- Computer Graphics
+- [Computer Graphics](cg24)
 - [Computing Infrastructures](ci24)
