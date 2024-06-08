@@ -31,6 +31,7 @@ Coming soon™
 
 ### Year 1
 
+- [Databases 2](db223) (Partial notes)
 - [Distributed Systems](ds23)
 - [Foundations of Operations Research](for23)
 - Software Engineering 2
