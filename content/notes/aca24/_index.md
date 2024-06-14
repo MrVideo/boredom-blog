@@ -32,6 +32,7 @@ These notes are from the *Advanced Computer Architectures* course I attended in 
 
 - [Data-level parallelism](aca24-dlp)
 - [Vector architectures](aca24-vector)
+- SIMD Instruction Set Extensions for multimedia (WIP)
 - GPUs (WIP)
 
 ## Thread-level parallelism
