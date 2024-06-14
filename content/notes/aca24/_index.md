@@ -31,7 +31,7 @@ These notes are from the *Advanced Computer Architectures* course I attended in 
 ## Data-level parallelism
 
 - [Data-level parallelism](aca24-dlp)
-- Vector architectures (WIP)
+- [Vector architectures](aca24-vector)
 - GPUs (WIP)
 
 ## Thread-level parallelism
