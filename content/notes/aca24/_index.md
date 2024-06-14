@@ -21,3 +21,4 @@ These notes are from the *Advanced Computer Architectures* course I attended in 
 - [Multiple issue and VLIW processors](aca24-multiple-issue-vliw)
 - [Scoreboarding](aca24-scoreboarding)
 - [Tomasulo's Algorithm](aca24-tomasulo)
+- [Multithreading](aca24-multithreading)
