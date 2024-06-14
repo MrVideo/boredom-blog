@@ -10,9 +10,14 @@ These notes are from the *Advanced Computer Architectures* course I attended in 
 
 ---
 
+## Introduction
+
 - [Data dependencies](aca24-data-dependencies)
 - [Pipelining](aca24-pipelining)
 - [Parallelism](aca24-parallelism)
+
+## Instruction-level parallelism
+
 - [Instruction Level Parallelism](aca24-ilp)
 - [Branch prediction](aca24-branch-prediction)
 - [Static Scheduling](aca24-static-scheduling)
@@ -22,3 +27,13 @@ These notes are from the *Advanced Computer Architectures* course I attended in 
 - [Scoreboarding](aca24-scoreboarding)
 - [Tomasulo's Algorithm](aca24-tomasulo)
 - [Multithreading](aca24-multithreading)
+
+## Data-level parallelism
+
+- SIMD and vector architectures (WIP)
+- GPUs (WIP)
+
+## Thread-level parallelism
+
+- Multiprocessors (WIP)
+- Cache coherence protocols (WIP)
