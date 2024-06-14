@@ -26,7 +26,7 @@ There are basically two kinds of parallelism in applications:
 Computer hardware, in turn, can exploit these two kinds of application parallelism in four major ways:
 
 1. [**Instruction-Level Parallelism**](../aca24-ilp) exploits data-level parallelism at modest levels with compiler help using ideas like pipelining and at medium levels using ideas like speculative execution
-2. **Vector Architectures** and **Graphics Processor Units** (GPUs) exploit data-level parallelism by applying a single instruction to a collection of data in parallel
+2. **Vector Architectures** and **Graphics Processor Units** (GPUs) exploit [data-level parallelism](../aca24-dlp) by applying a single instruction to a collection of data in parallel
 3. **Thread-Level Parallelism** exploits either data-level or task-level parallelism in a tightly coupled hardware model that allows for interaction among parallel threads
 4. **Request-Level Parallelism** exploits parallelism among largely decoupled tasks specified by the programmer or the operating system
 

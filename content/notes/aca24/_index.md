@@ -30,7 +30,8 @@ These notes are from the *Advanced Computer Architectures* course I attended in 
 
 ## Data-level parallelism
 
-- SIMD and vector architectures (WIP)
+- [Data-level parallelism](aca24-dlp)
+- Vector architectures (WIP)
 - GPUs (WIP)
 
 ## Thread-level parallelism
