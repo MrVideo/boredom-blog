@@ -18,7 +18,7 @@ These notes are from the *Advanced Computer Architectures* course I attended in 
 
 ## Instruction-level parallelism
 
-- [Instruction Level Parallelism](aca24-ilp)
+- [Instruction-level parallelism](aca24-ilp)
 - [Branch prediction](aca24-branch-prediction)
 - [Static Scheduling](aca24-static-scheduling)
 - [Dynamic scheduling](aca24-dynamic-scheduling)
