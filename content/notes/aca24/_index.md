@@ -37,5 +37,6 @@ These notes are from the *Advanced Computer Architectures* course I attended in 
 
 ## Thread-level parallelism
 
-- Multiprocessors (WIP)
-- Cache coherence protocols (WIP)
+- [Thread-level parallelism](aca24-tlp)
+- [Multiprocessors](aca24-multiprocessors)
+- [Cache coherence protocols](aca24-cache)
