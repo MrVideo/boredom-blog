@@ -6,8 +6,6 @@ layout: 'subhome'
 
 These notes are from the *Advanced Computer Architectures* course I attended in 2024. I mainly wrote them while studying from the book "*Computer Architecture - A quantitative approach*" by John Hennessy and David Patterson.
 
-> **Note**: I am working on completing the notes with multithreading, multiprocessors and vector processors. Thanks for your patience.
-
 ---
 
 ## Introduction
