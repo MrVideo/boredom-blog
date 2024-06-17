@@ -17,7 +17,7 @@ Currently, I am reworking some of my notes in order to publish them here, so not
 
 ### Year 1
 
-Coming soon™
+- [Fondamenti di Comunicazioni e Internet](fci21) (Completely in Italian)
 
 ### Year 2
 
