@@ -27,6 +27,7 @@ Coming soon™
 
 - [Databases 1](db122) (Completely in Italian)
 - [Software Engineering 1](se122) (Partially in Italian)
+- [Software Defined Networking](sdn23) (Partial notes, in Italian)
 
 ## Masters' degree
 
