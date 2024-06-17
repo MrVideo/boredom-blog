@@ -34,13 +34,13 @@ Questi due strumenti sono usati per:
 
 Una *Traffic Matrix* restituisce, per ogni punto di ingresso $i$ ed ogni punto di uscita $j$ di una rete, il volume di traffico $T(i,j)$ tra $i$ e $j$ in un dato intervallo di tempo.
 
-![](Images/Pasted%20image%2020230605110519.png)
+![](images/Pasted%20image%2020230605110519.png)
 
 > Una Traffic Matrix non considera i percorsi interni alla rete.
 
 Consideriamo ora questa matrice:
 
-![](Images/Pasted%20image%2020230605110615.png)
+![](images/Pasted%20image%2020230605110615.png)
 
 Possiamo calcolare $T^\text{in}(1)$ come:
 
@@ -75,8 +75,8 @@ Per poter stimare il traffico, dobbiamo fare ancora qualche assunzione:
 > 
 > Il traffico tra ogni coppia di link è proporzionale al traffico sui link stessi:
 > $$T(i,j) = {T^\text{in}(i)T^\text{out}(j) \over \big(\sum_{j=1}^N T^\text{out}(j)\big)-T^\text{out}(i)}$$
-> ![](Images/Pasted%20image%2020230605111604.png)
-> ![](Images/Pasted%20image%2020230605111821.png)
+> ![](images/Pasted%20image%2020230605111604.png)
+> ![](images/Pasted%20image%2020230605111821.png)
 > Questo modello è semplice ma non molto accurato e può essere rifinito aggiungendo informazioni su percorsi di routing, misure su link interni ed altro.
 
 ## Exact Counting
@@ -141,7 +141,7 @@ Il Randomized Counting funziona bene quando vogliamo misurare flussi di dimensio
 > Sia $n$ la dimensione del flusso in pacchetti e sia $X$ la variabile aleatoria *valore del contatore*.
 > $X$ segue una distribuzione binomiale $B(n,p)$:
 > $$P[X=0] = (1-p)^n$$
-> ![](Images/Pasted%20image%2020230605114521.png)
+> ![](images/Pasted%20image%2020230605114521.png)
 
 Calcoliamo una stima del numero di pacchetti in un flusso: sia $n$ la dimensione del flusso in pacchetti e $X$ la variabile aleatoria *valore del contatore*. Come detto prima, $X$ segue una distribuzione binomiale $B(n,p)$, perciò:
 
