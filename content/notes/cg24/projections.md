@@ -66,19 +66,19 @@ All these projections are obtained by applying some rotations to the parallel pr
 
 Isometric projections are obtained by applying a rotation of $45°$ around the $y$ axis, followed by a rotation of $35.26°$ around the $x$ axis.
 
-![](Università/Anno%204/Semestre%202/Computer%20Graphics/Images/Pasted%20image%2020240420121750.png)
+![](../images/Pasted%20image%2020240420121750.png)
 
 #### Dimetric projection
 
 Dimetric projections are obtained by applying a rotation of $45°$ around the $y$ axis, followed by an arbitrary rotation of angle $\alpha$ around the $x$ axis.
 
-![](Università/Anno%204/Semestre%202/Computer%20Graphics/Images/Pasted%20image%2020240420122112.png)
+![](../images/Pasted%20image%2020240420122112.png)
 
 #### Trimetric projection
 
 Trimetric projections are obtained by applying an arbitrary rotation of angle $\beta$ around the $y$ axis, followed by an arbitrary rotation of angle $\alpha$ around the $x$ axis.
 
-![](Università/Anno%204/Semestre%202/Computer%20Graphics/Images/Pasted%20image%2020240420122243.png)
+![](../images/Pasted%20image%2020240420122243.png)
 
 ## Oblique projections
 
@@ -90,7 +90,7 @@ The Cavalier projection is an oblique projection in which the lengths on the $z$
 
 It is obtained applying a shear of $45°$ and shear factor $\rho = 1$.
 
-![](Università/Anno%204/Semestre%202/Computer%20Graphics/Images/Pasted%20image%2020240420122746.png)
+![](../images/Pasted%20image%2020240420122746.png)
 
 ### Cabinet projection
 
@@ -98,7 +98,7 @@ The Cabinet projection is an oblique projection in which the lengths on the $z$ 
 
 It is obtained applying a shear of $45°$ and shear factor $\rho = 0.5$.
 
-![](Università/Anno%204/Semestre%202/Computer%20Graphics/Images/Pasted%20image%2020240420122934.png)
+![](../images/Pasted%20image%2020240420122934.png)
 
 ## Perspective projections
 
@@ -113,7 +113,7 @@ $$\begin{bmatrix}
 
 $\theta$ is the so-called field of view angle.
 
-![](Università/Anno%204/Semestre%202/Computer%20Graphics/Images/Pasted%20image%2020240420123235.png)
+![](../images/Pasted%20image%2020240420123235.png)
 
 > **GLM perspective projections**
 >
