@@ -24,6 +24,7 @@ Currently, I am reworking some of my notes in order to publish them here, so not
 
 - [Analisi Matematica II](am221) (Completely in Italian)
 - [Chimica Generale](chem21) (Partial notes, in Italian)
+- [Fondamenti di Automatica](fda22) (Partial notes, in Italian)
 
 ### Year 3
 
