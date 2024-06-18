@@ -8,12 +8,6 @@ mathjax: true
 
 ---
 
-## DISCLAIMER
-
-MathJax is having some issues rendering equations on this page, even though the LaTeX formulas are correct. I am investigating the issue and will fix it as soon as I find a solution. Sorry for the inconvenience.
-
----
-
 ## Download as PDF
 
 You can download this note as a PDF by clicking [here](graphs.pdf).
@@ -268,7 +262,7 @@ $$C_j = \begin{cases}
 
 and $\text{closest}_j$ like so:
 
-$$\text{closest}_j = \begin{cases}
+$$\text{closest}\_j = \begin{cases}
 \arg\min\{c_{ij}:i\in S\}, &j\notin S\\\
 \text{"predecessor" of } j \text{ in the minimum spanning tree}, &j\in S
 \end{cases}$$
@@ -293,7 +287,7 @@ $$\begin{aligned}
 &T\leftarrow\emptyset; \ S\leftarrow\{u\} \\\
 &\text{for } j\in N\setminus S \text{ do}\\\
 &\quad C_j\leftarrow c_{uj}\\\
-&\quad \text{closest}_j\leftarrow u\\\
+&\quad \text{closest}\_j\leftarrow u\\\
 &\\\
 &\text{for } k = 1, \ldots, n-1 \text{ do}\\\
 &\quad\min\leftarrow+\infty\\\
@@ -301,7 +295,7 @@ $$\begin{aligned}
 &\quad\quad\text{if } j\notin S \text{ and } C_j<\min \text{ then}\\\
 &\quad\quad\quad \min\leftarrow C_j; \ v\leftarrow j\\\
 &\\\
-&\quad S\leftarrow S\cup \{v\}; \ T\leftarrow T\cup\{\{\text{closest}_v,v\}\}\\\
+&\quad S\leftarrow S\cup \{v\}; \ T\leftarrow T\cup\{\{\text{closest}\_v,v\}\}\\\
 &\quad\text{for } j=1,\ldots,n\text{ do}\\\
 &\quad\quad\text{if }j\notin S \text{ and } c_{vj}<C_j \text{ then}\\\
 &\quad\quad\quad C_j\leftarrow c_{vj}: \text{closest}_j\leftarrow v
@@ -368,7 +362,7 @@ The data structure associated to Dijkstra's algorithm is as follows:
 - $S\subseteq N$: subset of nodes whose labels are **permanent** (cannot be changed anymore by the algorithm)
 - $\overline S = (N\setminus S)\subseteq N$: subset of nodes with **temporary** labels (they can still be changed by some iteration of the algorithm)
 - $L_j = \begin{cases}\text{cost of a shortest path from }s\text{ to }j,&j\in S\\\\min\{L_i+c_{ij}:(i,j)\in \delta^+(S)\},&j\notin S\end{cases}$
-- $\text{pred}_j = \begin{cases}\text{predecessor of }j\text{ in the shortest path from }s \text{ to } j, &j\in S\\\ u\text{ such that }L_u+c_{uj} = \min\{L_i+c_{ij}:i\in S\},&j\notin S\end{cases}$
+- $\text{pred}\_j = \begin{cases}\text{predecessor of }j\text{ in the shortest path from }s \text{ to } j, &j\in S\\\ u\text{ such that }L_u+c_{uj} = \min\{L_i+c_{ij}:i\in S\},&j\notin S\end{cases}$
 
 The complexity of Dijkstra's algorithm depends on how the arc $(u,v)$ is selected among those of the current cut $\delta^+(S)$:
 

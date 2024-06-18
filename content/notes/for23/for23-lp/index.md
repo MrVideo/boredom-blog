@@ -109,7 +109,7 @@ Now:
 
 If we consider the $A$ matrix from before, we can define a **basis** of such matrix as a subset of $m$ columns of $A$ that are linearly independent and form an $m\times m$ **non-singular** matrix $B$. We can so redefine $A$ as:
 
-$$A = [ \underbrace{B}_m | \underbrace{N}_{n-m} ]$$
+$$A = [ \underbrace{B}\_m | \underbrace{N}\_{n-m} ]$$
 
 Now, let $\underline x = [\underline x_B^T | \underline x_N^T]^T$.
 
@@ -326,7 +326,7 @@ Both variables can be decided by applying **Bland's rule**:
 > The variable that enters the basis is the one with index $s$ such that:
 > $$s = \min\ \{ j:\overline c_j<0 \}$$
 > The variable that leaves the basis is the one with index $r$ such that:
-> $$r = \min\ \bigg\{ i: {\overline b_i\over \overline a_{is}}=\theta^*, \ \overline a_{is}>0 \bigg\}$$
+> $$r = \min\ \bigg\\{ i: {\overline b_i\over \overline a_{is}}=\theta^*, \ \overline a_{is}>0 \bigg\\}$$
 
 A Linear Programming problem is said to be **unbound** if there exists a variable with a reduced cost $\overline c_j<0$ with $\overline a_{ij}\le 0, \ \forall i$. In other words, a problem is unbounded if **no element** of the $j$-th column **can be a pivot**.
 
@@ -389,7 +389,7 @@ A solution with more than $n-m$ zeroes (where $n$ is the number of variables and
 
 In the presence of degenerate basic feasible solutions, a basis change **may not decrease the objective function value**, since $\theta^*$ could be zero and the new optimised solution remains the same as the previous one.
 
-It should be noted that a degenerate BFS can arise from a non-degenerate one: even if $\theta^*>0$, several basic variables may become nil when $x_s$ is increased to $\theta^*$.
+It should be noted that a degenerate BFS can arise from a non-degenerate one: even if $\theta^\*>0$, several basic variables may become nil when $x_s$ is increased to $\theta^*$.
 
 The main problem with degenerate bases is that one can **cycle through a sequence** of them when solving a problem. Several anti-cycling rules have been proposed for the choice of the variables that enter and exit the bases, like Bland's rule.
 
@@ -439,7 +439,7 @@ $$\begin{cases}
 Now, we have two options:
 
 1. If $v^*>0$, then $P$ is **infeasible**
-2. If $v^*=0$, then clearly $\underline y^* = 0$ and $\underline x^*$ is a basic feasible solution of $P$
+2. If $v^\*=0$, then clearly $\underline y^* = 0$ and $\underline x^*$ is a basic feasible solution of $P$
 
 Depending on whether or not the auxiliary variables $y_i$ are basic, $P_A$ is solved differently:
 
@@ -726,32 +726,32 @@ $$\begin{matrix}
 \end{matrix}
 \end{matrix}$$
 
-Two feasible solutions $\underline x^*\in X$ and $\underline y^*\in Y$, with $X = \{ \underline x \in \mathbb R^n : A\underline x \ge \underline b, \underline x \ge \underline 0 \}$ and $Y = \{ \underline y \in \mathbb R^m : \underline y^TA\le\underline c^T, \underline y \ge \underline 0 \}$ are optimal if and only if $\underline{y^*}^T\underline b = \underline c^T\underline x^*$.
+Two feasible solutions $\underline x^\*\in X$ and $\underline y^\*\in Y$, with $X = \{ \underline x \in \mathbb R^n : A\underline x \ge \underline b, \underline x \ge \underline 0 \}$ and $Y = \{ \underline y \in \mathbb R^m : \underline y^TA\le\underline c^T, \underline y \ge \underline 0 \}$ are optimal if and only if $\underline{y^\*}^T\underline b = \underline c^T\underline x^\*$.
 
 If $x_j$ and $y_i$ are unknown, this is a single equation in $n+m$ unknowns.
 
-However, since $\underline{y^*}^T\underline b\le \underline{y^*}^TA\underline x^* \le \underline c^T\underline x^*$, we have:
+However, since $\underline{y^\*}^T\underline b\le \underline{y^\*}^TA\underline x^\* \le \underline c^T\underline x^\*$, we have:
 
 $$\begin{aligned}
-\underline{y^*}^T\underline b &= \underline{y^*}^TA\underline x^*\\\
-\underline{y^*}^TA\underline x^* &= \underline c^T\underline x^*
+\underline{y^\*}^T\underline b &= \underline{y^\*}^TA\underline x^\*\\\
+\underline{y^\*}^TA\underline x^\* &= \underline c^T\underline x^\*
 \end{aligned}$$
 
 Therefore:
 
 $$\begin{aligned}
-\underline{y^*}^T(A\underline x^* - \underline b) &= \underline 0\\\
-(\underline c^T - \underline{y^*}^TA)\underline x^* &= \underline 0
+\underline{y^\*}^T(A\underline x^\* - \underline b) &= \underline 0\\\
+(\underline c^T - \underline{y^\*}^TA)\underline x^\* &= \underline 0
 \end{aligned}$$
 
 These are $n+m$ equations in $n+m$ unknowns, and so **necessary and sufficient optimality conditions**.
 
 > **Complementary slackness conditions**
 >
-> $\underline x^*\in X$ and $\underline y^*\in Y$ are optimal solutions of, respectively, $(P)$ and $(D)$, if and only if:
+> $\underline x^\*\in X$ and $\underline y^\*\in Y$ are optimal solutions of, respectively, $(P)$ and $(D)$, if and only if:
 > $$\begin{aligned}
-> y_i^*\overbrace{(\underline{a}_i^T\underline x^* - b_i)}^{s_i} &= 0, &i = 1, \ldots, m\\\
-> \underbrace{(c_j^T-\underline{y^*}^TA_j)}_{s'_j}x_j^* &= 0, &j = 1, \ldots, n
+> y_i^\*\overbrace{(\underline{a}_i^T\underline x^\* - b_i)}^{s_i} &= 0, &i = 1, \ldots, m\\\
+> \underbrace{(c_j^T-\underline{y^\*}^TA_j)}\_{s'_j}x_j^\* &= 0, &j = 1, \ldots, n
 > \end{aligned}$$
 > Where:
 > - $\underline a_i$ denotes the $i$-th row of $A$
@@ -856,7 +856,7 @@ We need to respect two conditions:
 
 Let's consider the variation of the right-hand side terms first. Let's suppose we have:
 
-$$\underline b' \coloneqq \underline b + \delta_k\underline e_k, \ 1 \le k \le n$$
+$$\underline b' := \underline b + \delta_k\underline e_k, \ 1 \le k \le n$$
 
 where $\underline e_k$ is the vector which has a single one in the $k$-th position.
 
@@ -887,7 +887,7 @@ $$\Delta z^* = \delta_ky_k^*$$
 
 Let's now see what happens if we change the cost coefficients.
 
-Given $\underline c' \coloneqq \underline c + \delta_k\underline e_k$, a basis $B$ remains optimal as long as:
+Given $\underline c' := \underline c + \delta_k\underline e_k$, a basis $B$ remains optimal as long as:
 
 $${\underline{\overline{c}}'}_N^T = \underline{c'}_N^T - \underline{c'}_B^TB^{-1}N \ge \underline 0$$
 

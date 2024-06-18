@@ -278,7 +278,7 @@ This means that there are infinitely many formulations for the feasible region o
 >
 > The ideal formulation is that describing the **convex hull** of $X$, $\text{conv} (X)$, where $\text{conv} (X)$ is the smallest convex subset containing $X$.
 
-Since all vertices have all integer coordinates, for any $\underline c$, we have $z^*_\text{LP} = z^*_\text{ILP}$ and the Linear Programming optimum is also the Integer Linear Programming optimum.
+Since all vertices have all integer coordinates, for any $\underline c$, we have $z^\*\_\text{LP} = z^\*\_\text{ILP}$ and the Linear Programming optimum is also the Integer Linear Programming optimum.
 
 > **Theorem**
 >
@@ -300,7 +300,7 @@ The idea is, given an initial formulation, iteratively add cutting planes as lon
 
 ### Gomory fractional cuts
 
-Let $\underline x^*_\text{LP}$ be an optimal solution of the linear relaxation of the current formulation $\min\{ \underline c^T\underline x : A \underline x = \underline b, \underline x \ge \underline 0 \}$ and $x^*_{B[r]}$ be a fractional basic variable.
+Let $\underline x^\*\_\text{LP}$ be an optimal solution of the linear relaxation of the current formulation $\min\{ \underline c^T\underline x : A \underline x = \underline b, \underline x \ge \underline 0 \}$ and $x^\*\_{B[r]}$ be a fractional basic variable.
 
 The corresponding row of the optimal tableau is:
 

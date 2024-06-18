@@ -147,9 +147,9 @@ There are many different types of mathematical programming:
 
 | Type of programming        | Description                                                                                                                                                      | Use case                              |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| Linear Programming         | $$f \text{ is linear and } X = \bigg\{x\in\mathbb R^n:g_i(x) \lesseqgtr 0, i = 1,\ldots,m \bigg\} \text{ with } g_i \text{ linear } \forall i$$                  | Production planning                   |
-| Integer Linear Programming | $$f \text{ is linear and } X = \bigg\{x\in\mathbb R^n:g_i(x) \lesseqgtr 0, i = 1,\ldots,m \bigg\} \cap \mathbb Z^n \text{ with } g_i \text{ linear } \forall i$$ | Portfolio selection                   |
-| Nonlinear Programming      | $$f \text{ convex/concave and } X = \bigg\{x\in\mathbb R^n:g_i(x) \lesseqgtr 0, i = 1,\ldots,m \bigg\} \text{ with } g_i \text{ convex/concave } \forall i$$     | Facility location (with $g_i$ convex) | 
+| Linear Programming         | $$f \text{ is linear and } X = \bigg\\{x\in\mathbb R^n:g_i(x) \lesseqgtr 0, i = 1,\ldots,m \bigg\\} \text{ with } g_i \text{ linear } \forall i$$                  | Production planning                   |
+| Integer Linear Programming | $$f \text{ is linear and } X = \bigg\\{x\in\mathbb R^n:g_i(x) \lesseqgtr 0, i = 1,\ldots,m \bigg\\} \cap \mathbb Z^n \text{ with } g_i \text{ linear } \forall i$$ | Portfolio selection                   |
+| Nonlinear Programming      | $$f \text{ convex/concave and } X = \bigg\\{x\in\mathbb R^n:g_i(x) \lesseqgtr 0, i = 1,\ldots,m \bigg\\} \text{ with } g_i \text{ convex/concave } \forall i$$     | Facility location (with $g_i$ convex) | 
 
 ### Multi-objective programming
 
