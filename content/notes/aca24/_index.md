@@ -10,9 +10,9 @@ These notes are from the *Advanced Computer Architectures* course I attended in 
 
 ## Introduction
 
-- [Data dependencies](aca24-data-dependencies)
-- [Pipelining](aca24-pipelining)
 - [Parallelism](aca24-parallelism)
+- [Pipelining](aca24-pipelining)
+- [Data dependencies](aca24-data-dependencies)
 
 ## Instruction-level parallelism
 
@@ -20,10 +20,10 @@ These notes are from the *Advanced Computer Architectures* course I attended in 
 - [Branch prediction](aca24-branch-prediction)
 - [Static Scheduling](aca24-static-scheduling)
 - [Dynamic scheduling](aca24-dynamic-scheduling)
-- [Hardware-based speculation](aca24-hw-speculation)
-- [Multiple issue and VLIW processors](aca24-multiple-issue-vliw)
 - [Scoreboarding](aca24-scoreboarding)
 - [Tomasulo's Algorithm](aca24-tomasulo)
+- [Hardware-based speculation](aca24-hw-speculation)
+- [Multiple issue and VLIW processors](aca24-multiple-issue-vliw)
 - [Multithreading](aca24-multithreading)
 
 ## Data-level parallelism
