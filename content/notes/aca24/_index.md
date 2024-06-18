@@ -42,3 +42,7 @@ These notes are from the *Advanced Computer Architectures* course I attended in 
 ## Slide additions
 
 Some information was left out of the main pages because it was not in the book I studied from. If you're looking for that information, you can find it [here](aca24-slide-additions).
+
+## Cheat sheet
+
+The main formulas used in this course can be found in this [cheat sheet](cheat-sheet.pdf).
