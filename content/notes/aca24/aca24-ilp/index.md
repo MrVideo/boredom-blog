@@ -41,7 +41,7 @@ for (int i = 0; i <= 999; i++) {
 
 There are different techniques to convert such loop-level parallelism into instruction-level parallelism. Basically, they entail the unrolling of the loop either statically (as in done by the compiler) or dynamically (as in done by the hardware).
 
-An important, alternative method for exploiting loop-level parallelism is the use of [SIMD](../aca24-parallelism#parallel-architectures) in both vector processors and Graphics Processing Units (GPUs). A SIMD instruction exploits data-level parallelism by operating on a small to moderate number of data items in parallel, while a vector instruction exploits data-level parallelism by operating on many data items in parallel using both parallel execution units and a deep pipeline.
+An important, alternative method for exploiting loop-level parallelism is the use of [SIMD](../aca24-parallelism#parallel-architectures) in both [vector processors](../aca24-vector) and [Graphics Processing Units (GPUs)](../aca24-gpu). A SIMD instruction exploits data-level parallelism by operating on a small to moderate number of data items in parallel, while a vector instruction exploits data-level parallelism by operating on many data items in parallel using both parallel execution units and a deep pipeline.
 
 ### Loop unrolling: exposing ILP
 

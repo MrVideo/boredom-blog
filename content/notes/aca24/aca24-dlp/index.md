@@ -22,12 +22,12 @@ Finally, perhaps the biggest advantage of SIMD versus MIMD is that the programme
 
 The three main variations of SIMD architectures are:
 
-- Vector architectures
-- Multimedia SIMD instruction set extensions
-- Graphics Processing Units (GPUs)
+- [Vector architectures](../aca24-vector)
+- [Multimedia SIMD instruction set extensions](../aca-simd-ise)
+- [Graphics Processing Units (GPUs)](../aca24-gpu)
 
 The first variation, which predates the other two by more than thirty years, means essentially **pipelined execution of many data operations**. These vector architectures are easier to understand and to compile than other SIMD variations, but they were considered too expensive for microprocessors until recently.
 
-The second variation borrows the SIMD name to mean basically **simultaneous parallel data operations** and is found in most instruction set architectures today that support **multimedia applications**: for x86 architectures, this started with *Multimedia Extensions* (MMX) in 1996, which were followed by several *Streaming SIMD Extensions* (SSE) versions in the next decade and continue to this day with *Advanced Vector Extensions* (AVX).
+The second variation borrows the SIMD name to mean basically **simultaneous parallel data operations** and is found in most instruction set architectures today that support **multimedia applications**: for x86 architectures, this started with [*Multimedia Extensions* (MMX)](https://en.wikipedia.org/wiki/MMX_(instruction_set)) in 1996, which were followed by several [*Streaming SIMD Extensions* (SSE)](https://en.wikipedia.org/wiki/Streaming_SIMD_Extensions) versions in the next decade and continue to this day with [*Advanced Vector Extensions* (AVX)](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions).
 
 The third variation of SIMD comes from the GPU community, offering higher potential performance than is found in traditional multicore computers today. While GPUs share features with vector architectures, whey have their own distinguishing characteristics, in part due to the ecosystem in which they evolved. This environment has a system processor and system memory in addition to the GPU and its graphics memory. In fact, to recognise those distinctions, the GPU community refers to this type of architecture as *heterogeneous*.

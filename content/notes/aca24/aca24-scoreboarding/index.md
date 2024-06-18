@@ -18,7 +18,7 @@ In a dynamically scheduled pipeline, all instructions pass through the issue sta
 
 Scoreboarding is a technique for allowing instructions to execute out of order when there are sufficient resources and no data dependencies.
 
-Scoreboarding takes its name from the [CDC 6600](https://it.wikipedia.org/wiki/CDC_6600)’s scoreboard, which developed this capability.
+Scoreboarding takes its name from the [CDC 6600](https://en.wikipedia.org/wiki/CDC_6600)’s scoreboard, which developed this capability.
 
 The goal of a scoreboard is to maintain an execution rate of one instruction per clock cycle (when there are no [structural hazards](../aca24-pipelining#structural-hazards)) by executing an instruction as early as possible. Thus, when the next instruction to execute is stalled, other instructions can be issued and executed if they do not depend on any active or stalled instruction.
 

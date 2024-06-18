@@ -24,17 +24,17 @@ Like vector instructions, a SIMD instruction specifies the same operation on vec
 
 In contrast to vector architectures, which offer an elegant instruction set that is intended to be the target of a vectorising compiler, SIMD extensions have **three major omissions**:
 
-1. Multimedia SIMD extensions **fix the number of data operands in the opcode**, which has led to the addition of hundreds of instructions in the Multimedia Extensions (MMX), Streaming SIMD Extensions (SSE) and Advanced Vector Extensions (AVX) extensions of the [x86 architecture](#instruction-set-extensions-for-the-x86-architecture).
+1. Multimedia SIMD extensions **fix the number of data operands in the opcode**, which has led to the addition of hundreds of instructions in the [Multimedia Extensions (MMX)](https://en.wikipedia.org/wiki/MMX_(instruction_set)), [Streaming SIMD Extensions (SSE)](https://en.wikipedia.org/wiki/Streaming_SIMD_Extensions) and [Advanced Vector Extensions (AVX)](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions) extensions of the [x86 architecture](#instruction-set-extensions-for-the-x86-architecture).
 2. Multimedia SIMD does not offer the more sophisticated addressing modes of vector architectures, namely strided accesses and gather-scatter accesses[^1]
 3. Multimedia SIMD usually does not offer the mask registers to support conditional execution of elements[^1]
 
 ## Instruction set extensions for the x86 architecture
 
-For the x86 architecture, the Multimedia Extensions (MMX) instructions added in 1996 repurposed the 64-bit floating-point registers, so the basic instructions could perform eight 8-bit operations or four 16-bit operations simultaneously. These were joined by parallel `MAX` and `MIN` operations, a wide variety of masking and conditional instructions, operations typically found in digital signal processors and ad hoc instructions that were believed to be useful in important media libraries.
+For the x86 architecture, the [Multimedia Extensions (MMX)](https://en.wikipedia.org/wiki/MMX_(instruction_set)) instructions added in 1996 repurposed the 64-bit floating-point registers, so the basic instructions could perform eight 8-bit operations or four 16-bit operations simultaneously. These were joined by parallel `MAX` and `MIN` operations, a wide variety of masking and conditional instructions, operations typically found in digital signal processors and ad hoc instructions that were believed to be useful in important media libraries.
 
-The Streaming SIMD Extensions (SSE) successor in 1999 added separate registers that were 128 bits wide, so now instructions could simultaneously perform sixteen 8-bit operations, eight 16-bit operations or four 32-bit operations. It also performed parallel single-precision floating-point arithmetic. Since SSE had separate registers, it needed separate data transfer instructions. Intel continued expanding the SSE instructions until SSE4 in 2007. With each generation, they also added ad hoc instructions in order to accelerate specific multimedia functions.
+The [Streaming SIMD Extensions (SSE)](https://en.wikipedia.org/wiki/Streaming_SIMD_Extensions) successor in 1999 added separate registers that were 128 bits wide, so now instructions could simultaneously perform sixteen 8-bit operations, eight 16-bit operations or four 32-bit operations. It also performed parallel single-precision floating-point arithmetic. Since SSE had separate registers, it needed separate data transfer instructions. Intel continued expanding the SSE instructions until [SSE4](https://en.wikipedia.org/wiki/SSE4) in 2007. With each generation, they also added ad hoc instructions in order to accelerate specific multimedia functions.
 
-The Advanced Vector Extensions (AVX), added in 2010, doubles the width of the registers again to 256 bits.
+The [Advanced Vector Extensions (AVX)](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions), added in 2010, doubles the width of the registers again to 256 bits.
 
 ## Advantages and drawbacks
 

@@ -75,7 +75,7 @@ In this course, we focus on snooping protocols, thus only those will be describe
 
 ### Snooping protocols
 
-There are two ways to maintain the coherence requirement described earlier: one method is to ensure that a processor has exclusive access to a data item before it writes that item. This style of protocol is called **write invalidate protocol**, since it invalidates other copies on a write. This is by far the most common protocol applied to implement snooping protocols.
+There are two ways to maintain the coherence requirement described earlier: one method is to ensure that a processor has exclusive access to a data item before it writes that item. This style of protocol is called **write invalidate protocol**, since it invalidates other copies on a write. This is by far the most common technique applied to implement snooping protocols.
 
 Let’s make an example: consider a write followed by a read by another processor. Since the write requires exclusive access, any copy held by the reading processor **must be invalidated**. Thus, when the read occurs, **it misses** in the cache and is **forced to fetch a new copy** of the data. If two processors attempt to write the same data simultaneously, **one of them wins the race**, causing the other processor’s copy to be invalidated. For the other processor to complete its write, it must obtain a new copy of the data, which now contains the updated value. Therefore, this protocol **enforces write serialisation**.
 
