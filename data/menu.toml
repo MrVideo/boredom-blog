@@ -1,52 +1,12 @@
 [[entries]]
-title = "status"
+title = "Blog"
+url = "posts"
 
-	[[entries.entries]]
-	title = "trying to start a videogame studio"
-
-[[entries]]
-title = "all posts"
-
-	[entries.post_list]
-	section = "posts"
-	limit = 5
-	show_more = true
-	show_more_text = "See archive..."
-	show_more_url = "posts"
 
 [[entries]]
-title = "university notes"
+title = "University notes"
 url = "notes"
 
-# [[entries]]  
-# title = "university notes"
-#
-# 	[entries.post_list]
-# 	section = "notes"
-# 	limit = 5
-# 	show_more = true
-# 	show_more_text = "See more..."
-# 	show_more_url = "notes"
-
-
 [[entries]]
-title = "links"
-
-	[[entries.entries]]
-	title = '<a rel="me" href="https://mastodon.social/@mrvideo">mastodon</a>'
-
-	[[entries.entries]]
-	title = "github"
-	url = "https://github.com/mrvideo"
-
-	[[entries.entries]]
-	title = "email"
-	url = "mailto:hello@mariomerlo.me"
-
-	[[entries.entries]]
-	title = "cv"
-	url = "cv"
-
-	[[entries.entries]]
-	title = "blog rss"
-	url = "posts/index.xml"
+title = "Links"
+url = "links"
