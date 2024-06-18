@@ -23,7 +23,7 @@ Finally, perhaps the biggest advantage of SIMD versus MIMD is that the programme
 The three main variations of SIMD architectures are:
 
 - [Vector architectures](../aca24-vector)
-- [Multimedia SIMD instruction set extensions](../aca-simd-ise)
+- [Multimedia SIMD instruction set extensions](../aca24-simd-ise)
 - [Graphics Processing Units (GPUs)](../aca24-gpu)
 
 The first variation, which predates the other two by more than thirty years, means essentially **pipelined execution of many data operations**. These vector architectures are easier to understand and to compile than other SIMD variations, but they were considered too expensive for microprocessors until recently.
