@@ -9,4 +9,5 @@ These are my social media links. I am not very active anywhere though, so keep t
 - [Mastodon](https://mastodon.social/@mrvideo)
 - [GitHub](https://github.com/mrvideo)
 - [Email](mailto:hello@mariomerlo.me)
-- [CV](../cv)
+
+You can also find my CV [here](../cv).
