@@ -1,6 +1,6 @@
 baseURL = 'https://mariomerlo.me'
 languageCode = 'en-us'
-title = 'boredom'
+title = 'Mario Merlo'
 author = 'Mario Merlo'
 theme = 'nostyleplease'
 
@@ -35,11 +35,10 @@ theme = 'nostyleplease'
     ordered = false
 
 [params]
-description = 'a blog about nothing.'
 favicon = '/favicon.ico'
 
   [params.theme_config]
     appearance = "auto"
     back_home_text = "cd"
     date_format = "2006-01-02"
-	show_description = true
+	show_description = false
